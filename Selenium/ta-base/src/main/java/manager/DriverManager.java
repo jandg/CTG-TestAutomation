@@ -60,7 +60,7 @@ public class DriverManager {
 	}
 	
 	public static void killDriver() {
-		if (edriver == null) {
+		if (edriver != null) {
 			edriver.quit();
 		}
 		else driver.quit();
