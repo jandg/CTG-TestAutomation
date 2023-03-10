@@ -2,40 +2,40 @@
 <testng-results ignored="3" total="6" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-09T21:01:31 CET" name="Login Test Suite" finished-at="2023-03-09T21:01:32 CET" duration-ms="788">
+  <suite started-at="2023-03-10T12:22:58 CET" name="Login Test Suite" finished-at="2023-03-10T12:23:00 CET" duration-ms="1410">
     <groups>
     </groups>
-    <test started-at="2023-03-09T21:01:31 CET" name="Login Success" finished-at="2023-03-09T21:01:32 CET" duration-ms="358">
+    <test started-at="2023-03-10T12:22:58 CET" name="Login Success" finished-at="2023-03-10T12:22:59 CET" duration-ms="553">
       <class name="TrainingTests">
-        <test-method is-config="true" signature="logout()[pri:0, instance:TrainingTests@73ab3aac]" started-at="2023-03-09T21:01:32 CET" name="logout" finished-at="2023-03-09T21:01:32 CET" duration-ms="64" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:TrainingTests@73ab3aac]" started-at="2023-03-10T12:22:58 CET" name="logout" finished-at="2023-03-10T12:22:59 CET" duration-ms="79" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method signature="loginCorrect()[pri:0, instance:TrainingTests@73ab3aac]" started-at="2023-03-09T21:01:32 CET" name="loginCorrect" finished-at="2023-03-09T21:01:32 CET" duration-ms="257" status="PASS">
+        <test-method signature="loginCorrect()[pri:0, instance:TrainingTests@73ab3aac]" started-at="2023-03-10T12:22:59 CET" name="loginCorrect" finished-at="2023-03-10T12:22:59 CET" duration-ms="394" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCorrect -->
       </class> <!-- TrainingTests -->
     </test> <!-- Login Success -->
-    <test started-at="2023-03-09T21:01:32 CET" name="Login Fail" finished-at="2023-03-09T21:01:32 CET" duration-ms="393">
+    <test started-at="2023-03-10T12:22:59 CET" name="Login Fail" finished-at="2023-03-10T12:23:00 CET" duration-ms="767">
       <class name="TrainingTests">
-        <test-method is-config="true" signature="logout()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-09T21:01:32 CET" name="logout" finished-at="2023-03-09T21:01:32 CET" duration-ms="28" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-10T12:22:59 CET" name="logout" finished-at="2023-03-10T12:22:59 CET" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method signature="loginIncorrectPassword()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-09T21:01:32 CET" name="loginIncorrectPassword" finished-at="2023-03-09T21:01:32 CET" duration-ms="171" status="PASS">
+        <test-method signature="loginIncorrectPassword()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-10T12:22:59 CET" name="loginIncorrectPassword" finished-at="2023-03-10T12:22:59 CET" duration-ms="344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginIncorrectPassword -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-09T21:01:32 CET" name="logout" finished-at="2023-03-09T21:01:32 CET" duration-ms="29" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-10T12:22:59 CET" name="logout" finished-at="2023-03-10T12:22:59 CET" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method signature="loginIncorrectUsername()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-09T21:01:32 CET" name="loginIncorrectUsername" finished-at="2023-03-09T21:01:32 CET" duration-ms="165" status="PASS">
+        <test-method signature="loginIncorrectUsername()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-10T12:22:59 CET" name="loginIncorrectUsername" finished-at="2023-03-10T12:23:00 CET" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginIncorrectUsername -->
-        <test-method is-config="true" signature="shutOff()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-09T21:01:32 CET" name="shutOff" finished-at="2023-03-09T21:01:33 CET" duration-ms="243" status="PASS">
+        <test-method is-config="true" signature="shutOff()[pri:0, instance:TrainingTests@77b9d0c7]" started-at="2023-03-10T12:23:00 CET" name="shutOff" finished-at="2023-03-10T12:23:00 CET" duration-ms="282" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutOff -->
