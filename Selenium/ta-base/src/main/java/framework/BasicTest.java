@@ -7,17 +7,17 @@ import pageobjects.*;
 
 public class BasicTest {
 	
-	protected static MenuPage menuPage = new MenuPage();
-	protected static AdminPage adminPage = new AdminPage();
-	protected static LoginPage loginPage = new LoginPage();
-	protected static WelcomePage welcomePage = new WelcomePage();
+	protected static MenuPage menuPage;
+	protected static AdminPage adminPage;
+	protected static LoginPage loginPage;
+	protected static WelcomePage welcomePage;
 	
 	public static void initializePages() {
 		
-		PageFactory.initElements(DriverManager.getDriver(), menuPage);
-		PageFactory.initElements(DriverManager.getDriver(), adminPage);
-		PageFactory.initElements(DriverManager.getDriver(), loginPage);
-		PageFactory.initElements(DriverManager.getDriver(), welcomePage);
+		menuPage = new MenuPage(DriverManager.getDriver());
+		adminPage = new AdminPage(DriverManager.getDriver());
+		loginPage = new LoginPage(DriverManager.getDriver());
+		welcomePage = new WelcomePage(DriverManager.getDriver());
 		
 		DriverManager.getDriver().get("https://satrngselcypr.z16.web.core.windows.net/");
 	}
@@ -25,10 +25,10 @@ public class BasicTest {
 	
 	public static void initializePagesWithEventFiringDriver() {
 		
-		PageFactory.initElements(DriverManager.getEventFiringDriver(), menuPage);
-		PageFactory.initElements(DriverManager.getEventFiringDriver(), adminPage);
-		PageFactory.initElements(DriverManager.getEventFiringDriver(), loginPage);
-		PageFactory.initElements(DriverManager.getEventFiringDriver(), welcomePage);
+		menuPage = new MenuPage(DriverManager.getEventFiringDriver());
+		adminPage = new AdminPage(DriverManager.getEventFiringDriver());
+		loginPage = new LoginPage(DriverManager.getEventFiringDriver());
+		welcomePage = new WelcomePage(DriverManager.getEventFiringDriver());
 		
 		DriverManager.getEventFiringDriver().get("https://satrngselcypr.z16.web.core.windows.net/");
 		

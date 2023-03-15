@@ -17,20 +17,17 @@ public class Ex5 {
 		driver.get("https://satrngselcypr.z16.web.core.windows.net/");
 
 		// Menu
-		MenuPage menuPage = new MenuPage();
-		PageFactory.initElements(driver, menuPage);
+		MenuPage menuPage = new MenuPage(driver);
 		
 		menuPage.clickLogout();
 		
 		// Login
-		LoginPage loginPage = new LoginPage();
-		PageFactory.initElements(driver, loginPage);
+		LoginPage loginPage = new LoginPage(driver);
 		
 		loginPage.loginAsAdmin();
 		
 		// Welcome
-		WelcomePage welcomePage = new WelcomePage();
-		PageFactory.initElements(driver, welcomePage);
+		WelcomePage welcomePage = new WelcomePage(driver);
 		
 		System.out.println(welcomePage.getWelcomeMessage());
 		

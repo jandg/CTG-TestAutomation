@@ -42,14 +42,9 @@ public class Ex7 {
 	public static void initializePages() {
 		DriverManager.getDriver().get("https://satrngselcypr.z16.web.core.windows.net/");
 		
-		menu = new MenuPage();
-		login = new LoginPage();
-		welcome = new WelcomePage();
-		
-		PageFactory.initElements(DriverManager.getDriver(), menu);
-		PageFactory.initElements(DriverManager.getDriver(), login);
-		PageFactory.initElements(DriverManager.getDriver(), welcome);
-		
+		menu = new MenuPage(DriverManager.getDriver());
+		login = new LoginPage(DriverManager.getDriver());
+		welcome = new WelcomePage(DriverManager.getDriver());		
 		
 	}
 

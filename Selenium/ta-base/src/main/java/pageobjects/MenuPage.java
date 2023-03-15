@@ -1,8 +1,10 @@
 package pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class MenuPage {
 	
@@ -15,16 +17,25 @@ public class MenuPage {
 	@FindBy(how = How.XPATH, using = "//a[.='Admin']")
 	private WebElement btnAdmin;
 	
-	public void clickLogout() {
+	private WebDriver driver;
+	
+	public MenuPage(WebDriver webDriver) {
+		this.driver = webDriver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public WelcomePage clickLogout() {
 		this.btnLogout.click();
+		return new WelcomePage(driver);
 	}
 	
-	public void clickNew() {
+	/*public void clickNew() {
 		this.btnCrudConnections.click();
-	}
+	}*/
 	
-	public void clickAdmin() {
+	public AdminPage clickAdmin() {
 		this.btnAdmin.click();
+		return new AdminPage(driver);
 	}
 	
 

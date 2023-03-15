@@ -1,8 +1,10 @@
 package pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 import manager.DriverManager;
 
@@ -15,6 +17,13 @@ public class WelcomePage {
 	@FindBy(how = How.ID, using = "bear")
 	private WebElement imageBear;
 	
+	private WebDriver driver;
+	
+	public WelcomePage(WebDriver webDriver) {
+		this.driver = webDriver;
+		PageFactory.initElements(driver, this);
+	}
+	
 	public String getWelcomeMessage() {
 		return labelWelcome.getText();
 	}
@@ -23,9 +32,11 @@ public class WelcomePage {
 		return labelWelcome.isDisplayed();
 	}
 	
-	public void displayTheBear() {
+	public boolean displayTheBear() {
 		buttonShow.click();
+		return this.isTheBearDisplayed();
 	}
+	
 	public boolean isTheBearDisplayed() {
 		return imageBear.isDisplayed();
 	}
