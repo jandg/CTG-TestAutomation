@@ -25,4 +25,15 @@
       </classes>
      
   </test> 
+  
+    <test name="Add new Connection">
+
+      <classes>
+      	<class name="TrainingTests">
+      	<methods>
+      		<include name="createNewConnection"/>
+     	 </methods>
+     	 </class>
+      </classes>
+  </test> 
 </suite> 

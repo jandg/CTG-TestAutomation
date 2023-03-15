@@ -11,7 +11,7 @@ public class MenuPage {
 	@FindBy(how = How.ID, using = "logout")
 	private WebElement btnLogout;
 	
-	@FindBy(how = How.ID, using = "crudConnections")
+	@FindBy(how = How.ID, using = "crudConnection")
 	private WebElement btnCrudConnections;
 	
 	@FindBy(how = How.XPATH, using = "//a[.='Admin']")
@@ -29,9 +29,10 @@ public class MenuPage {
 		return new WelcomePage(driver);
 	}
 	
-	/*public void clickNew() {
+	public ConnectionPage clickNew() {
 		this.btnCrudConnections.click();
-	}*/
+		return new ConnectionPage(driver);
+	}
 	
 	public AdminPage clickAdmin() {
 		this.btnAdmin.click();
