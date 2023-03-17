@@ -2,6 +2,7 @@ package manager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
@@ -14,7 +15,7 @@ public class DriverManager {
 	
 	public static WebDriver getDriver() {
 		if (driver == null) {
-			setFirefoxDriver();
+			setChromeDriver();
 		}
 		return driver;
 	}
@@ -51,7 +52,13 @@ public class DriverManager {
 	
 	public static void setChromeDriver() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jdegeest\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+
+		 options.addArguments("--remote-allow-origins=*");
+
+		 driver = new ChromeDriver(options);
+		
+		//driver = new ChromeDriver();
 	}
 	
 	public static void setFirefoxDriver() {
