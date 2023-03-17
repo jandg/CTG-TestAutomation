@@ -14,6 +14,9 @@ public class MenuPage {
 	@FindBy(how = How.ID, using = "crudConnection")
 	private WebElement btnCrudConnections;
 	
+	@FindBy(how = How.XPATH, using = "//a[.='Stats']")
+	private WebElement btnStats;
+	
 	@FindBy(how = How.XPATH, using = "//a[.='Admin']")
 	private WebElement btnAdmin;
 	
@@ -34,10 +37,14 @@ public class MenuPage {
 		return new ConnectionPage(driver);
 	}
 	
+	public StatsPage clickStats() {
+		this.btnStats.click();
+		return new StatsPage(driver);
+	}
+	
 	public AdminPage clickAdmin() {
 		this.btnAdmin.click();
 		return new AdminPage(driver);
 	}
 	
-
 }

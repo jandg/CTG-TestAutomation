@@ -12,6 +12,7 @@ import pageobjects.AdminPage;
 import pageobjects.ConnectionPage;
 import pageobjects.LoginPage;
 import pageobjects.MenuPage;
+import pageobjects.StatsPage;
 import pageobjects.WelcomePage;
 
 
@@ -56,6 +57,21 @@ public class TrainingTests {
 		connectionPage = menuPage.clickNew().addConnection(c);
 		
 		Assert.assertTrue(connectionPage.getFeedback().equals("Connection 'Jan De Geest' added."),"The connection is not added");
+	}
+	
+	//Check stats page after creating 2 new connections
+	@Test
+	public void checkStats() {
+		Connection c1 = new Connection("John", "Doe", "M", "jde@test.be", "0453/12.34.56", "CTG", "Testing", "Junior", "TEST TEXT");
+		Connection c2 = new Connection("Jane", "Doa", "F", "jda@test.be", "0453/44.34.56", "CTG", "Testing", "Experienced", "TEST TEXT");
+		loginPage.loginAsAdmin();
+		connectionPage = menuPage.clickNew().addConnection(c1);
+		connectionPage = menuPage.clickNew().addConnection(c2);
+		StatsPage sp = menuPage.clickStats();
+		int total = Integer.valueOf(sp.getStat(0, 2));
+		int men = Integer.valueOf(sp.getStat(1, 2));
+		int women = Integer.valueOf(sp.getStat(2, 2));
+		Assert.assertTrue( total == (men+women),"The stats are incorrect");
 	}
 	
 	@BeforeMethod

@@ -15,7 +15,7 @@ public class DriverManager {
 	
 	public static WebDriver getDriver() {
 		if (driver == null) {
-			setChromeDriver();
+			setFirefoxDriver();
 		}
 		return driver;
 	}
@@ -57,8 +57,6 @@ public class DriverManager {
 		 options.addArguments("--remote-allow-origins=*");
 
 		 driver = new ChromeDriver(options);
-		
-		//driver = new ChromeDriver();
 	}
 	
 	public static void setFirefoxDriver() {
