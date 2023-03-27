@@ -1,5 +1,7 @@
 package pageobjects;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import dataholder.Connection;
+import manager.DriverManager;
 import manager.UtilityManager;
 
 public class ConnectionPage {
@@ -93,5 +96,26 @@ public class ConnectionPage {
 	public String getFeedback() {
 		return this.lblFeedback.getText();
 	}
+	
+	public ConnectionPage resetConnections() {
+		
+		JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+		js.executeScript("resetAddressBook(false)");
+		return this;
+		
+	}
+	
+	public ConnectionPage populateConnections() {
+		
+		JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+		js.executeScript("populateForTesting(false)");
+		Alert popup = driver.switchTo().alert();
+		popup.accept();
+
+		return this;
+		
+	}
+	
+	
 
 }

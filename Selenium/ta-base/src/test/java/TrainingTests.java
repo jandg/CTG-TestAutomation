@@ -21,12 +21,14 @@ public class TrainingTests {
 	private static MenuPage menuPage;
 	private static LoginPage loginPage;
 	private static ConnectionPage connectionPage;
+	private static StatsPage statsPage;
 
 	@BeforeSuite 
 	public static void setup() {
 		menuPage = new MenuPage(DriverManager.getDriver());
 		loginPage = new LoginPage(DriverManager.getDriver());
 		connectionPage = new ConnectionPage(DriverManager.getDriver());
+		statsPage = new StatsPage(DriverManager.getDriver());
 		DriverManager.getDriver().get("https://satrngselcypr.z16.web.core.windows.net/#");
 	}
 	
@@ -72,6 +74,22 @@ public class TrainingTests {
 		int men = Integer.valueOf(sp.getStat(1, 2));
 		int women = Integer.valueOf(sp.getStat(2, 2));
 		Assert.assertTrue( total == (men+women),"The stats are incorrect");
+	}
+	
+	//Check connections page with js functions
+	@Test
+	public void testConnections() {
+		loginPage.loginAsAdmin();
+		connectionPage = menuPage.clickNew().resetConnections();
+		statsPage = menuPage.clickStats();
+		System.out.println("Total connections: " + statsPage.getStat(0, 2));
+		connectionPage = menuPage.clickNew().populateConnections();
+		statsPage = menuPage.clickStats();
+		System.out.println("Total connections: " + statsPage.getStat(0, 2));
+		int men = Integer.valueOf(statsPage.getStat(1, 2));
+		int women = Integer.valueOf(statsPage.getStat(2, 2));
+		Assert.assertTrue( men == 13,"The stats are incorrect");
+		Assert.assertTrue( women == 3,"The stats are incorrect");
 	}
 	
 	@BeforeMethod

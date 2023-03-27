@@ -47,4 +47,15 @@
      	 </class>
       </classes>
   </test> 
+  
+  <test name="Test connections">
+
+      <classes>
+      	<class name="TrainingTests">
+      	<methods>
+      		<include name="testConnections"/>
+     	 </methods>
+     	 </class>
+      </classes>
+  </test> 
 </suite> 
